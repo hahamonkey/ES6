@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var Person = function(name) {
+        this.name = name;
+        this.gender = ['man', 'woman'];
+    }
+
+    // child
+    var Student = function(name, age) {
+        // inherit
+        Person.call(this);
+    }       
+    Student.prototype.message = function() {
+        console.log('name:'+this.name+', age:'+this.age+', gender:.'+this.gender[0]);
+    }
+
+    var xm = new Student('xiaom', 12);
+    xm.message(); //name:undefined, age:undefined, gender:.man
+</script>
+</body>
+</html>
